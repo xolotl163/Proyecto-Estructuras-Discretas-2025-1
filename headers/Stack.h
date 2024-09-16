@@ -7,32 +7,29 @@
 //handmade librarys
 #include "Node.h"
 
-class List{
+class Stack : private Node {
 
-    protected:
-        
-        Node* head;
-        Node* tail;
+    private:
+    
+        Node* top;
         int size;
 
     public:
-
+            
         //Constructors
-        List();
-        List(Node* head, Node* tail, int size);
+        Stack();
+        Stack(Node* top, int size = 0);
         
         //setters and getters
-        Node* getHead();
-        Node* getTail();
+        Node* getTop();
         int getSize();
         
-        bool setHead(Node* head);
-        bool setTail(Node* tail);
+        bool setTop(Node* top);
         bool setSize(int size);
-        bool printList();
+        bool printStack();
         
         //Destructor
-        ~List();
+        ~Stack();
 
         //general methods to the class
 
