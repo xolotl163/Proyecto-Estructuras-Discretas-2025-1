@@ -16,14 +16,14 @@ class Controller {
         std::string idController;
         int controllerNumber;
 
-        List subwayLines;
-        Stack stack;
+        List *subwayLines;
+        Stack *stack;
 
     public:
 
         //Constructors
         Controller(std::string idController, int controllerNumber);
-        Controller(std::string idController, int controllerNumber, List subwayLines);
+        Controller(std::string idController, int controllerNumber, List *subwayLines, Stack *stack);
         
         //setters and getters
         std::string getIdController();
@@ -35,7 +35,7 @@ class Controller {
         bool setControllerNumber(int controllerNumber);
         bool setSubwayLines(List subwayLines);
         bool printController();
-        bool setStack(Stack Stack);
+        bool setStack(Stack stack);
 
         //Destructor
         ~Controller();

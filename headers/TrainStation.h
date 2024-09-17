@@ -14,7 +14,7 @@ class TrainsStation : private Node {
     
         std::string name;
         int stationNumber;
-        List neighbors;
+        List *neighbors;
 
     public:
             
@@ -30,7 +30,7 @@ class TrainsStation : private Node {
         bool setName(std::string name);
         bool setStationNumber(int stationNumber);
         bool printTrainsStation();
-        bool setNeighbors(List neighbors);
+        bool setNeighbors(List *neighbors);
         
         //Destructor
         ~TrainsStation();

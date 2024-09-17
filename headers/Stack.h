@@ -17,8 +17,8 @@ class Stack : private Node {
     public:
             
         //Constructors
-        Stack();
-        Stack(Node* top, int size = 0);
+        Stack(std::string id);
+        Stack(std::string id, Node* top, int size = 0);
         
         //setters and getters
         Node* getTop();
