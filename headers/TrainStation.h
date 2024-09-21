@@ -8,7 +8,7 @@
 #include "Node.h"
 #include "List.h"
 
-class TrainStation {
+class TrainStation : protected Node{
 
     private:
     
@@ -20,7 +20,7 @@ class TrainStation {
             
         //Constructors
         TrainStation();
-        TrainStation(std::string name, int stationNumber);
+        TrainStation(std::string name, int stationNumber, Node *next, Node *prev, std::string id );
         
         //setters and getters
         std::string getName();

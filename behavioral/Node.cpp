@@ -10,8 +10,8 @@
 /* Node class implementation */ 
 
 //Constructors
-Node::Node(std::string id){
-    this->id = id;
+Node::Node(){
+    this->id = "<--- Node --->";
     this->next = nullptr;
     this->prev = nullptr;
 }
@@ -41,6 +41,11 @@ bool Node::setPrev(Node* prev){
         return true; 
     else 
         return false;
+}
+
+bool Node::setId(std::string id){
+    this->id = id;
+    return true;
 }
 
 bool Node::printNode(){

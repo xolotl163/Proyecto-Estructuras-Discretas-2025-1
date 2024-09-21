@@ -8,7 +8,7 @@
 #include "./headers/SubwayLine.h"
 
 //Constructors
-SubwayLine::SubwayLine(){
+SubwayLine::SubwayLine() : Node(){
     this->name = "-- SubwayLine --";
     this->idSubwayLine = " <--- Default ID ---> ";
     this->lineCode = 0;
@@ -16,12 +16,18 @@ SubwayLine::SubwayLine(){
     this->terminalB = nullptr; 
 }
 
-SubwayLine::SubwayLine(std::string name, std::string idSubwayLine, int lineCode, TrainStation *terminalA, TrainStation *terminalB){
+SubwayLine::SubwayLine(std::string name, std::string idSubwayLine, int lineCode, TrainStation *terminalA, TrainStation *terminalB) : Node(){
+    
+    //superclass attributes
+    this->setId(idSubwayLine);
+
+    //subclass attributes
     this->name = name;
     this->idSubwayLine = idSubwayLine;
     this->lineCode = lineCode;
     this->terminalA = terminalA;
     this->terminalB = terminalB;
+
 }
 
 //setters and getters

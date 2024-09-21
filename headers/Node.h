@@ -15,7 +15,7 @@ class Node {
     public:
 
         //Constructors
-        Node(std::string id);
+        Node();
         Node(std::string id, Node* next, Node* prev);
         
         //setters and getters
@@ -25,10 +25,11 @@ class Node {
         
         bool setNext(Node* next);
         bool setPrev(Node* prev);
+        bool setId(std::string id);
         bool printNode();
         
         //Destructor
-        ~Node();
+        virtual ~Node();
 
         //general methods to the class
 

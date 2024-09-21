@@ -60,14 +60,15 @@ bool Controller::printController(){
     std::cout << "Controller Number: " << this->getControllerNumber() << std::endl;
     std::cout << "Subway Lines: " << std::endl;
     
-    SubwayLine *aux = this->getSubwayLines()->getHead();
+    SubwayLine *aux = dynamic_cast<SubwayLine*>(this->getSubwayLines()->getHead());
     do{
         aux->printSubwayLine();
-        aux = aux->getNext();
+        aux = dynamic_cast<SubwayLine*>(aux->getNext());
     }while(aux != nullptr);
 
     std::cout << "Stack: " << std::endl;
     this->stack->printStack();
+    
     return true;
 }
 

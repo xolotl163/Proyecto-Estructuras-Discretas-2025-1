@@ -5,9 +5,10 @@
 #include <iostream>
 
 //handmade librarys
+#include "List.h"
 #include "TrainStation.h"
 
-class SubwayLine{
+class SubwayLine : public Node{
 
     private:
     

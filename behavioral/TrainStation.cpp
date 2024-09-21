@@ -10,14 +10,14 @@
 /* TrainStation class implementation */
 
 //Constructors
-TrainStation::TrainStation(){
+TrainStation::TrainStation() : Node(){
 
     this->name = "TrainStation";
     this->stationNumber = 0;
     this->neighbors = new List();
 }
 
-TrainStation::TrainStation(std::string name, int stationNumber){
+TrainStation::TrainStation(std::string name, int stationNumber, Node *next, Node *prev, std::string id) : Node( id, next, prev ){
     this->name = name;
     this->stationNumber = stationNumber;
     this->neighbors = new List();
