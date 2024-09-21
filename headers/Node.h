@@ -9,8 +9,8 @@ class Node {
     protected:
         
         std::string id;
-        Node* next;
-        Node* prev;
+        Node *next;
+        Node *prev;
 
     public:
 

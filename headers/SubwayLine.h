@@ -5,24 +5,31 @@
 #include <iostream>
 
 //handmade librarys
-#include "List.h"
+#include "TrainStation.h"
 
-class SubwayLine : private List {
+class SubwayLine{
 
     private:
     
-        std::string name;
         int lineCode;
+        std::string name;
+        std::string idSubwayLine;
+
+        TrainStation *terminalA;
+        TrainStation *terminalB;
 
     public:
             
         //Constructors
-        SubwayLine(std::string name, int lineCode);
-        SubwayLine(std::string name, int lineCode, Node* head, Node* tail, int size);
+        SubwayLine();
+        SubwayLine(std::string name, std::string idSubwayLine, int lineCode, TrainStation *terminalA, TrainStation *terminalB);
         
         //setters and getters
         std::string getName();
         int getLineCode();
+        std::string getIdSubwayLine();
+        TrainStation* getTerminalA();
+        TrainStation* getTerminalB();
         
         bool setName(std::string name);
         bool setLineCode(int lineCode);

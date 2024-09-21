@@ -10,30 +10,30 @@
 /* TrainStation class implementation */
 
 //Constructors
-TrainsStation::TrainsStation(std::string name, int stationNumber) : Node(name){
+TrainStation::TrainStation(){
 
-    this->name = name;
-    this->stationNumber = stationNumber;
+    this->name = "TrainStation";
+    this->stationNumber = 0;
     this->neighbors = new List();
 }
 
-TrainsStation::TrainsStation(std::string name, int stationNumber, Node* next, Node* prev ) : Node(name, next, prev){
+TrainStation::TrainStation(std::string name, int stationNumber){
     this->name = name;
     this->stationNumber = stationNumber;
     this->neighbors = new List();
 }
 
 //setters and getters
-std::string TrainsStation::getName(){return this->name;}
-int TrainsStation::getStationNumber(){return this->stationNumber;}
-List  TrainsStation::getNeighbors(){return *(this->neighbors);}
+std::string TrainStation::getName(){return this->name;}
+int TrainStation::getStationNumber(){return this->stationNumber;}
+List*  TrainStation::getNeighbors(){return (this->neighbors);}
 
-bool TrainsStation::setName(std::string name){
+bool TrainStation::setName(std::string name){
     this->name = name;
     return true;
 }
 
-bool TrainsStation::setStationNumber(int stationNumber){
+bool TrainStation::setStationNumber(int stationNumber){
     if (this->stationNumber = stationNumber){
         return true;
     }
@@ -42,23 +42,30 @@ bool TrainsStation::setStationNumber(int stationNumber){
     }
 }
 
-bool TrainsStation::printTrainsStation(){
-    if (this->next != nullptr){
-        std::cout << "Next node id: " << this->next->getId() << std::endl;
+bool TrainStation::printTrainsStation(){
+    if ( this != nullptr ){
+        std::cout << "Station name: " << this->getName() << std::endl;
+        std::cout << "Station number: " << this->getStationNumber() << std::endl;
         return true;
     }
     else{
-        std::cout << "Next node id: nullptr" << std::endl;
+        std::cout << "Station name: nullptr" << std::endl;
+        std::cout << "Station number: nullptr" << std::endl;
+        return false;
+
+    }
+}
+
+bool TrainStation::setNeighbors(List *neighbors){
+    if (this->neighbors = neighbors){
+        return true;
+    }
+    else{
         return false;
     }
 }
 
-bool TrainsStation::setNeighbors(List *neighbors){
-    this->neighbors = neighbors;
-    return true;
-}
-
 //Destructor
-TrainsStation::~TrainsStation(){}
+TrainStation::~TrainStation(){}
 
 //general methods to the class

@@ -8,14 +8,20 @@
 #include "./headers/SubwayLine.h"
 
 //Constructors
-SubwayLine::SubwayLine(std::string name, int lineCode) : List(){
-    this->name = name;
-    this->lineCode = lineCode;
+SubwayLine::SubwayLine(){
+    this->name = "-- SubwayLine --";
+    this->idSubwayLine = " <--- Default ID ---> ";
+    this->lineCode = 0;
+    this->terminalA = nullptr;
+    this->terminalB = nullptr; 
 }
 
-SubwayLine::SubwayLine(std::string name, int lineCode, Node* head, Node* tail, int size) : List(head, tail, size){
+SubwayLine::SubwayLine(std::string name, std::string idSubwayLine, int lineCode, TrainStation *terminalA, TrainStation *terminalB){
     this->name = name;
+    this->idSubwayLine = idSubwayLine;
     this->lineCode = lineCode;
+    this->terminalA = terminalA;
+    this->terminalB = terminalB;
 }
 
 //setters and getters
@@ -23,9 +29,14 @@ std::string SubwayLine::getName(){
     return this->name;
 }
 
+std::string SubwayLine::getIdSubwayLine(){
+    return this->idSubwayLine;
+}
+
 int SubwayLine::getLineCode(){
     return this->lineCode;
 }
+
 
 bool SubwayLine::setName(std::string name){
     this->name = name;
@@ -38,12 +49,18 @@ bool SubwayLine::setLineCode(int lineCode){
 }
 
 bool SubwayLine::printSubwayLine(){
-    Node* aux = this->getHead();
-    while(aux != nullptr){
-        aux->printNode();
-        aux = aux->getNext();
+    if ( this != nullptr ){
+        std::cout << "SubwayLine name: " << this->getName() << std::endl;
+        std::cout << "SubwayLine ID: " << this->getIdSubwayLine() << std::endl;
+        std::cout << "SubwayLine code: " << this->getLineCode() << std::endl;
+        return true;
     }
-    return true;
+    else{
+        std::cout << "SubwayLine name: nullptr" << std::endl;
+        std::cout << "SubwayLine ID: nullptr" << std::endl;
+        std::cout << "SubwayLine code: nullptr" << std::endl;
+        return false;
+    }
 }
 
 //Destructor

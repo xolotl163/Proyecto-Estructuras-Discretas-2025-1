@@ -8,7 +8,7 @@
 #include "Node.h"
 #include "List.h"
 
-class TrainsStation : private Node {
+class TrainStation {
 
     private:
     
@@ -19,13 +19,13 @@ class TrainsStation : private Node {
     public:
             
         //Constructors
-        TrainsStation(std::string name, int stationNumber);
-        TrainsStation(std::string name, int stationNumber, Node* next, Node* prev);
+        TrainStation();
+        TrainStation(std::string name, int stationNumber);
         
         //setters and getters
         std::string getName();
         int getStationNumber();
-        List getNeighbors();
+        List* getNeighbors();
         
         bool setName(std::string name);
         bool setStationNumber(int stationNumber);
@@ -33,7 +33,7 @@ class TrainsStation : private Node {
         bool setNeighbors(List *neighbors);
         
         //Destructor
-        ~TrainsStation();
+        ~TrainStation();
 
         //general methods to the class
 };

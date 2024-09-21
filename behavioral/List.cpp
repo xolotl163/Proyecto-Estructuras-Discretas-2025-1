@@ -14,7 +14,7 @@ List::List(){
     this->size = 0;
 }
 
-List::List(Node* head, Node* tail, int size){
+List::List(Node *head, Node *tail, int size){
     this->head = head;
     this->tail = tail;
     this->size = size;
@@ -22,34 +22,40 @@ List::List(Node* head, Node* tail, int size){
 
 //setters and getters
 Node* List::getHead(){
-    return this->head;
+    return (this->head);
 }
 
 Node* List::getTail(){
-    return this->tail;
+    return (this->tail);
 }
 
 int List::getSize(){
     return this->size;
 }
 
-bool List::setHead(Node* head){
-    this->head = head;
-    return true;
+bool List::setHead(Node *head){
+    if (this->head = head)
+        return true;
+    else
+        return false;
 }
 
-bool List::setTail(Node* tail){
-    this->tail = tail;
-    return true;
+bool List::setTail(Node *tail){
+    if (this->tail = tail)
+        return true;
+    else
+        return false;
 }
 
 bool List::setSize(int size){
-    this->size = size;
-    return true;
+    if (this->size = size)
+        return true;
+    else
+        return false;
 }
 
 bool List::printList(){
-    Node* aux = this->head;
+    Node *aux = this->getHead();
     while(aux != nullptr){
         aux->printNode();
         aux = aux->getNext();

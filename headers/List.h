@@ -11,15 +11,15 @@ class List{
 
     protected:
         
-        Node* head;
-        Node* tail;
+        Node *head;
+        Node *tail;
         int size;
 
     public:
 
         //Constructors
         List();
-        List(Node* head, Node* tail, int size);
+        List(Node *head, Node *tail, int size);
         
         //setters and getters
         Node* getHead();

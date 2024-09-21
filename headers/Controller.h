@@ -22,14 +22,14 @@ class Controller {
     public:
 
         //Constructors
-        Controller(std::string idController, int controllerNumber);
+        Controller();
         Controller(std::string idController, int controllerNumber, List *subwayLines, Stack *stack);
         
         //setters and getters
         std::string getIdController();
         int getControllerNumber();
-        List getSubwayLines();
-        Stack getStack();
+        List* getSubwayLines();
+        Stack* getStack();
 
         bool setIdController(std::string idController);
         bool setControllerNumber(int controllerNumber);

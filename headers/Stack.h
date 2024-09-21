@@ -7,17 +7,18 @@
 //handmade librarys
 #include "Node.h"
 
-class Stack : private Node {
+class Stack{
 
     private:
     
         Node* top;
         int size;
+        std::string id;
 
     public:
             
         //Constructors
-        Stack(std::string id);
+        Stack();
         Stack(std::string id, Node* top, int size = 0);
         
         //setters and getters

@@ -24,10 +24,10 @@ Node::Node(std::string id, Node* next, Node* prev){
 
 //setters and getters
 std::string Node::getId(){return this->id;}
-Node* Node::getNext(){return this->next;}
-Node* Node::getPrev(){return this->prev;}
+Node* Node::getNext(){return (this->next);}
+Node* Node::getPrev(){return (this->prev);}
 
-bool Node::setNext(Node* next){
+bool Node::setNext(Node *next){
     if (this->next = next){
         return true;
     }
@@ -46,11 +46,11 @@ bool Node::setPrev(Node* prev){
 bool Node::printNode(){
 
     if (this->next != nullptr){
-        std::cout << "Next node id: " << this->next->getId() << std::endl;
+        std::cout << "Node id: " << this->getId() << std::endl;
         return true;
     }
     else{
-        std::cout << "Next node id: nullptr" << std::endl;
+        std::cout << "Node id: nullptr" << std::endl;
         return false;
     }
 }

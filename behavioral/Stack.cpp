@@ -8,17 +8,15 @@
 #include "./headers/Stack.h"
 
 //Constructors
-Stack::Stack(std::string id) : Node(id){
+Stack::Stack(){
+    this->id = "<--- Stack --->";
     this->top = nullptr;
-    this->next = nullptr;
-    this->prev = nullptr;
     this->size = 0;
 }
 
-Stack::Stack(std::string id, Node* top, int size = 0) : Node(id){
+Stack::Stack(std::string id, Node* top, int size = 0){
+    this->id = id;
     this->top = top;
-    this->next = nullptr;
-    this->prev = nullptr;
     this->size = size;
 }
 

@@ -9,11 +9,11 @@
 
 
 //Constructors
-Controller::Controller(std::string idController, int controllerNumber){
-    this->idController = idController;
-    this->controllerNumber = controllerNumber;
-    this->subwayLines = new List();
-    this->stack = new Stack("0");
+Controller::Controller(){
+    this->idController = "<--- Controller --->";
+    this->controllerNumber = 0;
+    this->subwayLines = nullptr;
+    this->stack = nullptr;
 }
 
 Controller::Controller(std::string idController, int controllerNumber, List *subwayLines, Stack *stack){
@@ -32,12 +32,12 @@ int Controller::getControllerNumber(){
     return this->controllerNumber;
 }
 
-List Controller::getSubwayLines(){
-    return *(this->subwayLines);
+List* Controller::getSubwayLines(){
+    return (this->subwayLines);
 }
 
-Stack Controller::getStack(){
-    return *(this->stack);
+Stack* Controller::getStack(){
+    return (this->stack);
 }
 
 bool Controller::setIdController(std::string idController){
@@ -59,7 +59,13 @@ bool Controller::printController(){
     std::cout << "Controller: " << this->getIdController() << std::endl;
     std::cout << "Controller Number: " << this->getControllerNumber() << std::endl;
     std::cout << "Subway Lines: " << std::endl;
-    this->subwayLines->printList();
+    
+    SubwayLine *aux = this->getSubwayLines()->getHead();
+    do{
+        aux->printSubwayLine();
+        aux = aux->getNext();
+    }while(aux != nullptr);
+
     std::cout << "Stack: " << std::endl;
     this->stack->printStack();
     return true;
