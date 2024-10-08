@@ -14,10 +14,10 @@ Stack::Stack(){
     this->size = 0;
 }
 
-Stack::Stack(std::string id, Node* top, int size = 0){
+Stack::Stack(std::string id, Node* top){
     this->id = id;
     this->top = top;
-    this->size = size;
+    this->size = 0;
 }
 
 //setters and getters
@@ -31,12 +31,20 @@ int Stack::getSize(){
 
 bool Stack::setTop(Node* top){
     this->top = top;
-    return true;
+    if(this->getTop() != nullptr){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool Stack::setSize(int size){
     this->size = size;
-    return true;
+    if(this->getSize() != 0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool Stack::printStack(){

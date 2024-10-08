@@ -19,7 +19,7 @@ class List{
 
         //Constructors
         List();
-        List(Node *head, Node *tail, int size);
+        List(Node *head, Node *tail);
         
         //setters and getters
         Node* getHead();

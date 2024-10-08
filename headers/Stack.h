@@ -19,7 +19,7 @@ class Stack{
             
         //Constructors
         Stack();
-        Stack(std::string id, Node* top, int size = 0);
+        Stack(std::string id, Node* top);
         
         //setters and getters
         Node* getTop();

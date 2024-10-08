@@ -46,12 +46,20 @@ int SubwayLine::getLineCode(){
 
 bool SubwayLine::setName(std::string name){
     this->name = name;
-    return true;
+    if (this->getName() != ""){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool SubwayLine::setLineCode(int lineCode){
     this->lineCode = lineCode;
-    return true;
+    if (this->getLineCode() != 0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool SubwayLine::printSubwayLine(){

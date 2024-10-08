@@ -35,7 +35,7 @@ class Controller {
         bool setControllerNumber(int controllerNumber);
         bool setSubwayLines(List subwayLines);
         bool printController();
-        bool setStack(Stack stack);
+        bool setStack(Stack *stack);
 
         //Destructor
         ~Controller();

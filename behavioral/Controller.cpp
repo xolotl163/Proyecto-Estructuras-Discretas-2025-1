@@ -42,17 +42,29 @@ Stack* Controller::getStack(){
 
 bool Controller::setIdController(std::string idController){
     this->idController = idController;
-    return true;
+    if (this->getIdController() != ""){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool Controller::setControllerNumber(int controllerNumber){
     this->controllerNumber = controllerNumber;
-    return true;
+    if (this->getControllerNumber() != 0){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool Controller::setSubwayLines(List subwayLines){
     this->subwayLines = &subwayLines;
-    return true;
+    if (this->getSubwayLines() != nullptr){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool Controller::printController(){
@@ -72,9 +84,13 @@ bool Controller::printController(){
     return true;
 }
 
-bool Controller::setStack(Stack stack){
-    this->stack = &stack;
-    return true;
+bool Controller::setStack(Stack *stack){
+    this->stack = stack;
+    if (this->getStack() != nullptr){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 //Destructor

@@ -12,8 +12,8 @@
 //Constructors
 TrainStation::TrainStation() : Node(){
 
-    this->name = "TrainStation";
-    this->stationNumber = 0;
+    this->name = "<--- TrainStation --->";
+    this->stationNumber = -1;
     this->neighbors = new List();
 }
 
@@ -30,14 +30,18 @@ List*  TrainStation::getNeighbors(){return (this->neighbors);}
 
 bool TrainStation::setName(std::string name){
     this->name = name;
-    return true;
+    if(this->getName() != ""){
+        return true;
+    }else{
+     return false;
+    }
 }
 
 bool TrainStation::setStationNumber(int stationNumber){
-    if (this->stationNumber = stationNumber){
+    this->stationNumber = stationNumber;
+    if (this->getStationNumber() != -1){
         return true;
-    }
-    else{
+    }else{
         return false;
     }
 }
@@ -57,7 +61,8 @@ bool TrainStation::printTrainsStation(){
 }
 
 bool TrainStation::setNeighbors(List *neighbors){
-    if (this->neighbors = neighbors){
+    this->neighbors = neighbors;
+    if (this->getNeighbors() != nullptr){
         return true;
     }
     else{
