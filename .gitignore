@@ -1,0 +1,8 @@
+
+/* Binary files */
+subwaylines
+*.out
+
+
+/* folders */
+.vscode

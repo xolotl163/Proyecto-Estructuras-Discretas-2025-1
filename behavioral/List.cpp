@@ -1,13 +1,13 @@
 
-#pragma once
-
 //general use librarys
 #include <iostream>
 
 //handmade librarys
-#include "./headers/List.h"
+#include "../headers/Node.h"
+#include "../headers/List.h"
 
 //Constructors
+
 List::List(){
     this->head = nullptr;
     this->tail = nullptr;
@@ -68,4 +68,26 @@ bool List::printList(){
 
 //Destructor
 List::~List(){}
+
 //general methods to the class
+bool List::addElement(Node *element){
+
+    if(this->getHead() == nullptr){
+        this->setHead(element);
+        this->setTail(element);
+        this->setSize(this->getSize() + 1);
+        std::cout << "Element added" << std::endl;
+        return true;
+        
+    }
+    else{
+        this->getTail()->setNext(element);
+        element->setPrev(this->getTail());
+        this->setTail(element);
+        this->setSize(this->getSize() + 1);
+        std::cout << "Element added" << std::endl;
+        return true;
+    }
+
+    return false;
+}

@@ -1,11 +1,9 @@
 
-#pragma once    
-
 //general use libraries
 #include <iostream>
 
 //handmade libraries
-#include "./headers/Node.h"
+#include "../headers/Node.h"
 
 /* Node class implementation */ 
 

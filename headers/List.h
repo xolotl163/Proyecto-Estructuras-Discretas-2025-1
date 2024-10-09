@@ -35,5 +35,6 @@ class List{
         ~List();
 
         //general methods to the class
+        bool addElement(Node *element);
 
 };

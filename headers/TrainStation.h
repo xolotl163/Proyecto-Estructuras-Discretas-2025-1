@@ -8,7 +8,7 @@
 #include "Node.h"
 #include "List.h"
 
-class TrainStation : protected Node{
+class TrainStation : public Node{
 
     private:
     

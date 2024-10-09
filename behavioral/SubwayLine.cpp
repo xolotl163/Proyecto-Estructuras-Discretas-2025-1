@@ -1,11 +1,9 @@
 
-#pragma once
-
 //general use librarys
 #include <iostream>
 
 //handmade librarys
-#include "./headers/SubwayLine.h"
+#include "../headers/SubwayLine.h"
 
 //Constructors
 SubwayLine::SubwayLine() : Node(){
@@ -13,7 +11,10 @@ SubwayLine::SubwayLine() : Node(){
     this->idSubwayLine = " <--- Default ID ---> ";
     this->lineCode = 0;
     this->terminalA = nullptr;
-    this->terminalB = nullptr; 
+    this->terminalB = nullptr;
+
+    std::cout << "SubwayLine created" << std::endl;
+
 }
 
 SubwayLine::SubwayLine(std::string name, std::string idSubwayLine, int lineCode, TrainStation *terminalA, TrainStation *terminalB) : Node(){
@@ -27,6 +28,8 @@ SubwayLine::SubwayLine(std::string name, std::string idSubwayLine, int lineCode,
     this->lineCode = lineCode;
     this->terminalA = terminalA;
     this->terminalB = terminalB;
+
+    std::cout << "SubwayLine created" << name << std::endl;
 
 }
 
