@@ -1,12 +1,9 @@
 
-#pragma once
-
 //general use librarys
 #include <iostream>
 
 //handmade librarys
-#include "./headers/Controller.h"
-
+#include "../headers/Controller.h"
 
 //Constructors
 Controller::Controller(){

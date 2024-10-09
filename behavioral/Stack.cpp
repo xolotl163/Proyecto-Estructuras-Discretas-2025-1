@@ -1,11 +1,9 @@
 
-#pragma once
-
 //general use librarys
 #include <iostream>
 
 //handmade librarys
-#include "./headers/Stack.h"
+#include "../headers/Stack.h"
 
 //Constructors
 Stack::Stack(){

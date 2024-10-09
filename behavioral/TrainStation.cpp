@@ -1,11 +1,9 @@
 
-#pragma once
-
 //general use librarys
 #include <iostream>
 
 //handmade librarys
-#include "./headers/TrainStation.h"
+#include "../headers/TrainStation.h"
 
 /* TrainStation class implementation */
 
@@ -15,12 +13,18 @@ TrainStation::TrainStation() : Node(){
     this->name = "<--- TrainStation --->";
     this->stationNumber = -1;
     this->neighbors = new List();
+
+    std::cout << "Trainstation created" << std::endl ;
+
 }
 
 TrainStation::TrainStation(std::string name, int stationNumber, Node *next, Node *prev, std::string id) : Node( id, next, prev ){
     this->name = name;
     this->stationNumber = stationNumber;
     this->neighbors = new List();
+
+    std::cout << "Trainstation created " << name << std::endl ;
+
 }
 
 //setters and getters
