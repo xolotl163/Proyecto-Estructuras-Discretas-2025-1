@@ -15,6 +15,7 @@ class TrainStation : public Node{
         std::string name;
         int stationNumber;
         List *neighbors;
+        bool visitedState;
 
     public:
             
@@ -26,11 +27,13 @@ class TrainStation : public Node{
         std::string getName();
         int getStationNumber();
         List* getNeighbors();
+        bool getVisitedState();
         
         bool setName(std::string name);
         bool setStationNumber(int stationNumber);
         bool printTrainsStation();
         bool setNeighbors(List *neighbors);
+        bool setVisitedState(bool visitedState);
         
         //Destructor
         ~TrainStation();

@@ -41,5 +41,7 @@ class Controller {
         ~Controller();
 
         //general methods to the class
+        List* parseStacktoList(Stack *stack);
+        List* findPath(TrainStation *start, TrainStation *end);
 
 };

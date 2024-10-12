@@ -56,4 +56,34 @@ bool Stack::printStack(){
 
 //Destructor
 Stack::~Stack(){}
+
 //general methods to the class
+bool Stack::push(Node* element){
+    if (element != nullptr){
+        element->setNext(this->top);
+        this->top = element;
+        this->size++;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+Node* Stack::pop(){
+    if (this->top != nullptr){
+        Node* aux = this->top;
+        this->top = this->top->getNext();
+        this->size--;
+        return aux;
+    }else{
+        return nullptr;
+    }
+}
+
+bool Stack::isEmpty(){
+    if (this->top == nullptr){
+        return true;
+    }else{
+        return false;
+    }
+}

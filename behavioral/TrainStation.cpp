@@ -13,6 +13,7 @@ TrainStation::TrainStation() : Node(){
     this->name = "<--- TrainStation --->";
     this->stationNumber = -1;
     this->neighbors = new List();
+    this->visitedState = false;
 
     std::cout << "Trainstation created" << std::endl ;
 
@@ -22,6 +23,7 @@ TrainStation::TrainStation(std::string name, int stationNumber, Node *next, Node
     this->name = name;
     this->stationNumber = stationNumber;
     this->neighbors = new List();
+    this->visitedState = false;
 
     std::cout << "Trainstation created " << name << std::endl ;
 
@@ -31,6 +33,7 @@ TrainStation::TrainStation(std::string name, int stationNumber, Node *next, Node
 std::string TrainStation::getName(){return this->name;}
 int TrainStation::getStationNumber(){return this->stationNumber;}
 List*  TrainStation::getNeighbors(){return (this->neighbors);}
+bool TrainStation::getVisitedState(){return this->visitedState;}
 
 bool TrainStation::setName(std::string name){
     this->name = name;
@@ -70,6 +73,15 @@ bool TrainStation::setNeighbors(List *neighbors){
         return true;
     }
     else{
+        return false;
+    }
+}
+
+bool TrainStation::setVisitedState(bool visitedState){
+    this->visitedState = visitedState;
+    if (this->getVisitedState() == visitedState){
+        return true;
+    }else{
         return false;
     }
 }

@@ -33,5 +33,8 @@ class Stack{
         ~Stack();
 
         //general methods to the class
+        bool push(Node* element);
+        Node* pop();
+        bool isEmpty();
 
 };
